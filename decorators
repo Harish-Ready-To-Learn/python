@@ -1,0 +1,15 @@
+                                 decorators
+**************************************************************************************************************************                                 
+
+
+def sum(x,y):
+    print( x+y)
+def sub(func):
+    def inner(m,n):
+        if m<n:
+            m,n=n,m
+            print(m-n)
+        return func(m,n)
+    return inner
+sum1=sub(sum)
+sum1(2,5)
